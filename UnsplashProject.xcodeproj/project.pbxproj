@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C14404F4290ADDAA00F373A3 /* RandomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14404F3290ADDAA00F373A3 /* RandomPhotoViewController.swift */; };
+		C14404F6290AE36E00F373A3 /* RandomPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14404F5290AE36E00F373A3 /* RandomPhotoViewModel.swift */; };
+		C14404FB290BB6F600F373A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C14404FA290BB6F600F373A3 /* .gitignore */; };
+		C14404FD290BB74C00F373A3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14404FC290BB74C00F373A3 /* APIKey.swift */; };
+		C1440500290BBA8500F373A3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14404FF290BBA8500F373A3 /* APIService.swift */; };
+		C1440502290BBC6E00F373A3 /* CObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1440501290BBC6E00F373A3 /* CObservable.swift */; };
+		C1440505290BBDC400F373A3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C1440504290BBDC400F373A3 /* Alamofire */; };
+		C1440508290BBDF600F373A3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C1440507290BBDF600F373A3 /* Kingfisher */; };
+		C144050B290BC93A00F373A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C144050A290BC93A00F373A3 /* SnapKit */; };
+		C144050D290BCDD200F373A3 /* RandomPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C144050C290BCDD200F373A3 /* RandomPhotos.swift */; };
+		C1440510290BDB8D00F373A3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C144050F290BDB8D00F373A3 /* SwiftyJSON */; };
 		C1CCDEC129011B0100FF4ECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CCDEC029011B0100FF4ECE /* AppDelegate.swift */; };
 		C1CCDEC329011B0100FF4ECE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CCDEC229011B0100FF4ECE /* SceneDelegate.swift */; };
 		C1CCDEC529011B0100FF4ECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CCDEC429011B0100FF4ECE /* ViewController.swift */; };
@@ -16,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C14404F3290ADDAA00F373A3 /* RandomPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoViewController.swift; sourceTree = "<group>"; };
+		C14404F5290AE36E00F373A3 /* RandomPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoViewModel.swift; sourceTree = "<group>"; };
+		C14404FA290BB6F600F373A3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C14404FC290BB74C00F373A3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		C14404FF290BBA8500F373A3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		C1440501290BBC6E00F373A3 /* CObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObservable.swift; sourceTree = "<group>"; };
+		C144050C290BCDD200F373A3 /* RandomPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotos.swift; sourceTree = "<group>"; };
 		C1CCDEBD29011B0100FF4ECE /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1CCDEC029011B0100FF4ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1CCDEC229011B0100FF4ECE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,15 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C144050B290BC93A00F373A3 /* SnapKit in Frameworks */,
+				C1440508290BBDF600F373A3 /* Kingfisher in Frameworks */,
+				C1440510290BDB8D00F373A3 /* SwiftyJSON in Frameworks */,
+				C1440505290BBDC400F373A3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C14404F2290ADC9E00F373A3 /* RandomPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				C14404F3290ADDAA00F373A3 /* RandomPhotoViewController.swift */,
+				C14404F5290AE36E00F373A3 /* RandomPhotoViewModel.swift */,
+				C144050C290BCDD200F373A3 /* RandomPhotos.swift */,
+			);
+			path = RandomPhoto;
+			sourceTree = "<group>";
+		};
+		C14404FE290BBA3800F373A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C14404FF290BBA8500F373A3 /* APIService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C1CCDEB429011B0100FF4ECE = {
 			isa = PBXGroup;
 			children = (
+				C14404FA290BB6F600F373A3 /* .gitignore */,
 				C1CCDEBF29011B0100FF4ECE /* UnsplashProject */,
 				C1CCDEBE29011B0100FF4ECE /* Products */,
 			);
@@ -56,6 +97,8 @@
 		C1CCDEBF29011B0100FF4ECE /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				C14404FE290BBA3800F373A3 /* Network */,
+				C14404F2290ADC9E00F373A3 /* RandomPhoto */,
 				C1CCDEC029011B0100FF4ECE /* AppDelegate.swift */,
 				C1CCDEC229011B0100FF4ECE /* SceneDelegate.swift */,
 				C1CCDEC429011B0100FF4ECE /* ViewController.swift */,
@@ -63,6 +106,8 @@
 				C1CCDEC929011B0100FF4ECE /* Assets.xcassets */,
 				C1CCDECB29011B0100FF4ECE /* LaunchScreen.storyboard */,
 				C1CCDECE29011B0100FF4ECE /* Info.plist */,
+				C14404FC290BB74C00F373A3 /* APIKey.swift */,
+				C1440501290BBC6E00F373A3 /* CObservable.swift */,
 			);
 			path = UnsplashProject;
 			sourceTree = "<group>";
@@ -83,6 +128,12 @@
 			dependencies = (
 			);
 			name = UnsplashProject;
+			packageProductDependencies = (
+				C1440504290BBDC400F373A3 /* Alamofire */,
+				C1440507290BBDF600F373A3 /* Kingfisher */,
+				C144050A290BC93A00F373A3 /* SnapKit */,
+				C144050F290BDB8D00F373A3 /* SwiftyJSON */,
+			);
 			productName = UnsplashProject;
 			productReference = C1CCDEBD29011B0100FF4ECE /* UnsplashProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +162,12 @@
 				Base,
 			);
 			mainGroup = C1CCDEB429011B0100FF4ECE;
+			packageReferences = (
+				C1440503290BBDC400F373A3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C1440506290BBDF600F373A3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C1440509290BC93A00F373A3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C144050E290BDB8D00F373A3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = C1CCDEBE29011B0100FF4ECE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14404FB290BB6F600F373A3 /* .gitignore in Resources */,
 				C1CCDECD29011B0100FF4ECE /* LaunchScreen.storyboard in Resources */,
 				C1CCDECA29011B0100FF4ECE /* Assets.xcassets in Resources */,
 				C1CCDEC829011B0100FF4ECE /* Main.storyboard in Resources */,
@@ -138,8 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1440502290BBC6E00F373A3 /* CObservable.swift in Sources */,
+				C14404F6290AE36E00F373A3 /* RandomPhotoViewModel.swift in Sources */,
+				C14404FD290BB74C00F373A3 /* APIKey.swift in Sources */,
+				C14404F4290ADDAA00F373A3 /* RandomPhotoViewController.swift in Sources */,
 				C1CCDEC529011B0100FF4ECE /* ViewController.swift in Sources */,
 				C1CCDEC129011B0100FF4ECE /* AppDelegate.swift in Sources */,
+				C144050D290BCDD200F373A3 /* RandomPhotos.swift in Sources */,
+				C1440500290BBA8500F373A3 /* APIService.swift in Sources */,
 				C1CCDEC329011B0100FF4ECE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +422,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1440503290BBDC400F373A3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C1440506290BBDF600F373A3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		C1440509290BC93A00F373A3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C144050E290BDB8D00F373A3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1440504290BBDC400F373A3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1440503290BBDC400F373A3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C1440507290BBDF600F373A3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1440506290BBDF600F373A3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C144050A290BC93A00F373A3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1440509290BC93A00F373A3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		C144050F290BDB8D00F373A3 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C144050E290BDB8D00F373A3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1CCDEB529011B0100FF4ECE /* Project object */;
 }
