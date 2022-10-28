@@ -14,10 +14,8 @@ struct RandomPhotos: Hashable {
 }
 
 struct RandomPhoto: Codable, Hashable {
-     
     let description: String?
     let urls: Urls
-    
 }
 
 struct Urls: Codable, Hashable {
