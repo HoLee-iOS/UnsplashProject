@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 enum SearchError: Error {
     case noPhoto
     case serverError
 }
 
-
 class RandomPhotoViewModel {
     
-    var photoList: CObservable<RandomPhoto> = CObservable(RandomPhoto(description: "", urls: Urls(thumb: "")))
+    //var photoList: CObservable<RandomPhoto> = CObservable(RandomPhoto(description: "", urls: Urls(thumb: "")))
+    var photoList = BehaviorRelay(value: RandomPhoto(description: "", urls: Urls(thumb: "")))
     
     func requestRandomPhoto() {
         APIService.randomPhoto { [weak self] photo, statusCode, error in
@@ -30,8 +32,8 @@ class RandomPhotoViewModel {
                 return
             }
             
-            self?.photoList.value = photo
+            //self?.photoList.value = photo
+            self?.photoList.accept(photo)
         }
     }
-    
 }

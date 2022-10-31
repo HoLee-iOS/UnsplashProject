@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
 import SnapKit
 
 class RandomPhotoViewController: UIViewController {
@@ -26,12 +28,12 @@ class RandomPhotoViewController: UIViewController {
     
     var viewModel = RandomPhotoViewModel()
     
+    let disposeBag = DisposeBag()
+    
     private var dataSource: UICollectionViewDiffableDataSource<Int, RandomPhoto>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("dassad")
         
         configureUI()
         setConstraints()
@@ -59,22 +61,32 @@ class RandomPhotoViewController: UIViewController {
     }
     
     func addAction() {
-        randomButton.addTarget(self, action: #selector(randomTapped), for: .touchUpInside)
-    }
-    
-    @objc func randomTapped() {
-        viewModel.requestRandomPhoto()
+        
+        randomButton.rx.tap
+            .withUnretained(self)
+            .subscribe { (vc, value) in
+                vc.viewModel.requestRandomPhoto()
+            } onError: { error in
+                print(error)
+            } onCompleted: {
+                print("Completed")
+            } onDisposed: {
+                print("Disposed")
+            }
+            .disposed(by: disposeBag)
+            
         
         viewModel.photoList
-            .bind { value in
-                print(value)
+            .asDriver()
+            .drive { value in
                 var snapshot = NSDiffableDataSourceSnapshot<Int, RandomPhoto>()
                 snapshot.appendSections([0])
                 snapshot.appendItems([value])
                 self.dataSource.apply(snapshot)
             }
+            .disposed(by: disposeBag)
+        
     }
-    
 }
 
 extension RandomPhotoViewController {
