@@ -19,21 +19,35 @@ class RandomPhotoViewModel {
     //var photoList: CObservable<RandomPhoto> = CObservable(RandomPhoto(description: "", urls: Urls(thumb: "")))
     var photoList = BehaviorRelay(value: RandomPhoto(description: "", urls: Urls(thumb: "")))
     
-    func requestRandomPhoto() {
-        APIService.randomPhoto { [weak self] photo, statusCode, error in
+    let disposeBag = DisposeBag()
+    
+//    func requestRandomPhoto() {
+//        APIService.randomPhoto { [weak self] photo, statusCode, error in
+//
+//            guard let statusCode = statusCode, statusCode == 200 else {
+//                print(error)
+//                return
+//            }
+//
+//            guard let photo = photo else {
+//                print(error)
+//                return
+//            }
+//
+//            //self?.photoList.value = photo
+//            self?.photoList.accept(photo)
+//        }
+//    }
+    
+    func requestPhoto() {
+        APIService.rxRandomPhoto(disposeBag: disposeBag) { value, statusCode, error in
             
-            guard let statusCode = statusCode, statusCode == 200 else {
+            guard let value = value else {
                 print(error)
                 return
             }
-            
-            guard let photo = photo else {
-                print(error)
-                return
-            }
-            
-            //self?.photoList.value = photo
-            self?.photoList.accept(photo)
-        }
+    
+            self.photoList.accept(value)
+        } 
     }
 }

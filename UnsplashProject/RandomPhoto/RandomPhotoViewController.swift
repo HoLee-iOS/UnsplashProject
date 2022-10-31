@@ -65,7 +65,7 @@ class RandomPhotoViewController: UIViewController {
         randomButton.rx.tap
             .withUnretained(self)
             .subscribe { (vc, value) in
-                vc.viewModel.requestRandomPhoto()
+                vc.viewModel.requestPhoto()
             } onError: { error in
                 print(error)
             } onCompleted: {
