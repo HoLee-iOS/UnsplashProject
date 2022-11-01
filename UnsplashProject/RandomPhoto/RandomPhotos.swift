@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct RandomPhoto: Codable, Hashable {
     let description: String?
@@ -17,5 +16,21 @@ struct Urls: Codable, Hashable {
     let thumb: String
 }
 
-
-
+//struct RandomSection {
+//    var items: [Item]
+//    
+//    init(items: [RandomPhoto]) {
+//        self.items = items
+//    }
+//}
+//
+//extension RandomSection: SectionModelType {
+//    
+//    typealias Item = RandomPhoto
+//    
+//    init(original: RandomSection, items: [Item]) {
+//        self = original
+//        self.items = items
+//    }
+//    
+//}

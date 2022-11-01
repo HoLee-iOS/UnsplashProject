@@ -18,6 +18,7 @@ class RandomPhotoViewModel {
     
     //var photoList: CObservable<RandomPhoto> = CObservable(RandomPhoto(description: "", urls: Urls(thumb: "")))
     var photoList = BehaviorRelay(value: RandomPhoto(description: "", urls: Urls(thumb: "")))
+    //var photoList: BehaviorSubject<[RandomSection]> = BehaviorSubject(value: [])
     
     let disposeBag = DisposeBag()
     
@@ -46,7 +47,7 @@ class RandomPhotoViewModel {
                 print(error)
                 return
             }
-    
+            
             self.photoList.accept(value)
         } 
     }

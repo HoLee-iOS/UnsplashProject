@@ -9,7 +9,9 @@ import UIKit
 
 import RxSwift
 import RxCocoa
+import RxDataSources
 import SnapKit
+import Kingfisher
 
 class RandomPhotoViewController: UIViewController {
     
@@ -74,16 +76,15 @@ class RandomPhotoViewController: UIViewController {
                 print("Disposed")
             }
             .disposed(by: disposeBag)
-            
         
         viewModel.photoList
             .asDriver()
-            .drive { value in
+            .drive(onNext: { [weak self] value in
                 var snapshot = NSDiffableDataSourceSnapshot<Int, RandomPhoto>()
                 snapshot.appendSections([0])
                 snapshot.appendItems([value])
-                self.dataSource.apply(snapshot)
-            }
+                self?.dataSource.apply(snapshot, animatingDifferences: true)
+            })
             .disposed(by: disposeBag)
         
     }
@@ -113,7 +114,7 @@ extension RandomPhotoViewController {
             
             var background = UIBackgroundConfiguration.listPlainCell()
             background.strokeWidth = 2
-            background.strokeColor = .systemOrange
+            background.strokeColor = .systemGreen
             
             cell.backgroundConfiguration = background
         })
@@ -123,6 +124,5 @@ extension RandomPhotoViewController {
             let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegisteration, for: indexPath, item: itemIdentifier)
             return cell
         })
-    }
-    
+    }    
 }

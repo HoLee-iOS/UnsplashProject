@@ -20,22 +20,22 @@ enum NetworkError: String {
 
 class APIService {
     
-//    static func randomPhoto(completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
-//        let url = "\(APIKey.randomURL)"
-//        let header: HTTPHeaders = ["Authorization": APIKey.authorization]
-//
-//        //Codable을 사용한다면 swiftyJson 필요없음!
-//        AF.request(url, method: .get, headers: header).responseDecodable(of: RandomPhoto.self) { response in
-//
-//            let statusCode = response.response?.statusCode //상태코드 조건문 처리 해보기!
-//            //콜수
-//            //랜덤포토
-//            switch response.result {
-//            case .success(let value): completion(value, statusCode, nil)
-//            case .failure(let error): completion(nil, statusCode, error)
-//            }
-//        }
-//    }
+    //    static func randomPhoto(completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
+    //        let url = "\(APIKey.randomURL)"
+    //        let header: HTTPHeaders = ["Authorization": APIKey.authorization]
+    //
+    //        //Codable을 사용한다면 swiftyJson 필요없음!
+    //        AF.request(url, method: .get, headers: header).responseDecodable(of: RandomPhoto.self) { response in
+    //
+    //            let statusCode = response.response?.statusCode //상태코드 조건문 처리 해보기!
+    //            //콜수
+    //            //랜덤포토
+    //            switch response.result {
+    //            case .success(let value): completion(value, statusCode, nil)
+    //            case .failure(let error): completion(nil, statusCode, error)
+    //            }
+    //        }
+    //    }
     
     static func rxRandomPhoto(disposeBag: DisposeBag, completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
         let url = APIKey.randomURL
@@ -63,6 +63,17 @@ class APIService {
                 completion(nil, code, error)
             })
             .disposed(by: disposeBag)
+    }
+    
+    
+    static func requestPhoto() -> URLRequest {
+        
+        let url = URL(string: APIKey.listURL)!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue(APIKey.authorization, forHTTPHeaderField: "Authorization")
+        return request
     }
     
     private init() { }
